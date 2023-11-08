@@ -7,7 +7,7 @@ interface NavItemProps {
 }
 const NavItem = (props: NavItemProps) => {
   return (
-    <div className='border mr-2'><Link to={props.to}>{props.children}</Link></div>
+    <div className='border m-2'><Link to={props.to}>{props.children}</Link></div>
   );
 };
 

@@ -1,20 +1,24 @@
 import React from 'react'
-import Commnet from '../components/Commnet'
+import Comment from '../components/Comment'
 
 const DetailPage = () => {
   return (
     <div>
-        <div>작성자</div>
-        <div>내용</div>
-        <div>2021-01-01</div>
+        <div className=''>
+          <div className='text-xs'>작성자</div>
+          <div className='text-xs text-gray-700'>내용</div>
+          <div>2021-01-01</div>
+        </div>
         <div>
             댓글목록
-            <Commnet />
-            <Commnet />
-            <Commnet />
-            <Commnet />
-            <input />
-            <button>댓글 쓰기</button>
+            <Comment />
+            <Comment />
+            <Comment />
+            <Comment />
+            <div className='flex flex-row items-center'>
+              <input className='border' />
+              <button>댓글 쓰기</button>
+            </div>
         </div>
     </div>
   )
