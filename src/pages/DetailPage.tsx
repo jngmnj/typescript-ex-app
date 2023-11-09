@@ -31,18 +31,22 @@ const DetailPage = () => {
   }
 
   return (
-    <div className='flex flex-col items-center'>
+    <div className="flex flex-col items-center">
       <div className="text-xs">{post.body}</div>
       <div className="">{post.author.name}</div>
-      <div className="text-xs text-gray-700">{formatTimestamp(post.timestamp)}</div>
+      <div className="text-xs text-gray-700">
+        {formatTimestamp(post.timestamp)}
+      </div>
       <div>
-        {
-          post.comments.map((c) => (
-            <Comment key={c.id} comment={c} />
-          ))
-        }
+        {post.comments.map((c) => (
+          <Comment key={c.id} comment={c} />
+        ))}
         <div className="flex flex-row border">
-          <input className='' value={commentBody} onChange={e => setCommentBody(e.target.value)} />
+          <input
+            className=""
+            value={commentBody}
+            onChange={(e) => setCommentBody(e.target.value)}
+          />
           <button onClick={onWriteComment}>댓글 쓰기</button>
         </div>
       </div>

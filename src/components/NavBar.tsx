@@ -4,7 +4,7 @@ import NavItem from './NavItem'
 
 const NavBar = () => {
   return (
-    <div>
+    <div className='flex'>
         <NavItem to="/">메인</NavItem>
         <NavItem to="/login">로그인</NavItem>
         <button onClick={() => {console.log("logout")}}>로그아웃</button>

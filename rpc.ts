@@ -8,7 +8,11 @@ export interface Post {
   author: User;
   body: string;
   timestamp: number;
+<<<<<<< HEAD
   comments: Comment[];
+=======
+  comments: Comment[]
+>>>>>>> 50eaae0ee2eb90518163b0c5370df5c47d06fef6
 }
 
 export interface Comment {
@@ -22,7 +26,13 @@ export interface CreatePostRequest {
   body: string;
 }
 
+<<<<<<< HEAD
 export interface CreatePostResponse {}
+=======
+export interface CreatePostResponse {
+
+}
+>>>>>>> 50eaae0ee2eb90518163b0c5370df5c47d06fef6
 
 export interface CreateCommentRequest {
   postId: number;
@@ -61,6 +71,7 @@ export interface ReadPreviewResponse {
   comments: Preview[];
 }
 
+<<<<<<< HEAD
 export interface IRpc {
   createPost: (req: CreatePostRequest) => CreatePostResponse; // promise부분 없는이유 ?
   createComment: (req: CreateCommentRequest) => CreateCommentResponse;
@@ -120,3 +131,15 @@ export type RpcResponse<T extends keyof IRpc> = {
 
 export type RpcError = string;
 
+=======
+
+export interface IRpc {
+  createPost: (req: CreatePostRequest) => CreatePostResponse; // promise부분 없는이유 ?
+  createComment: (req: CreateCommentRequest) => CreateCommentResponse; 
+  readPost: (req: ReadPostRequest) => ReadPostResponse; 
+  readRandomPost: (req: ReadRandomPostRequest) => ReadRandomPostResponse; 
+  readProfile: (req: ReadProfileRequest) => ReadProfileResponse; 
+  updateProfile: (req: UpdateProfileRequest) => UpdateProfileResponse; 
+  readPreview: (req: ReadPreviewRequest) => ReadPreviewResponse; 
+}
+>>>>>>> 50eaae0ee2eb90518163b0c5370df5c47d06fef6
