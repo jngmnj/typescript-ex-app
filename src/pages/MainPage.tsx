@@ -1,15 +1,43 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import useRpc from '../hooks/useRpc'
+import { formatTimestamp } from "../utils/time";
+import Loading from '../components/Loading';
+import useNavigateWithSeaerch from '../hooks/useNavigateWithSeaerch';
 
 const MainPage = () => {
+  const rpcRandomPost = useRpc("readRandomPost", {});
+  const navigate = useNavigateWithSeaerch();
+
+  useEffect(() => {
+    rpcRandomPost.request({})
+  }, [])
+  
+  const onNext = () => {
+    rpcRandomPost.request({})
+  }
+
+  const post = rpcRandomPost.value?.post;
+
+  if(!post) {
+    return <Loading />;
+  }
+
+  const onDetail = () => {
+    // navigate({pathname:"/detail", search:createSearchParams({id: `${post.id}`}).toString()})
+    navigate("/detail", { id: post.id });
+  };
+
   return (
     <div>
-        <div className='text-center font-bold'>작성자</div>
-        <div>내용</div>
-        <div>2021-01-01</div>
-        <button>자세히</button>
-        <button>다음글</button>
+      <div className="text-xs">{post.body}</div>
+      <div className="text-xs">{post.author.name}</div>
+      <div className="text-xs">{formatTimestamp(post.timestamp)}</div>
+      <button className="border border-black p-2 m-1" onClick={onDetail}>자세히</button>
+      <button className="border border-black p-2 m-1" onClick={onNext}>
+        다음글
+      </button>
     </div>
-  )
+  );
 }
 
 export default MainPage
