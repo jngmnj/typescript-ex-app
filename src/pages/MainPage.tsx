@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import useRpc from '../hooks/useRpc'
 import { formatTimestamp } from "../utils/time";
 import Loading from '../components/Loading';
-import useNavigateWithSeaerch from '../hooks/useNavigateWithSeaerch';
+import useNavigateWithSeaerch from '../hooks/useNavigateWithSearch';
 
 const MainPage = () => {
   const rpcRandomPost = useRpc("readRandomPost", {});

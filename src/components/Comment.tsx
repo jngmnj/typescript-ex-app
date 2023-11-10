@@ -6,7 +6,7 @@ interface CommentProps {
   comment: RpcComment;
 }
 
-const Commnet = (props: CommentProps) => {
+const Comment = (props: CommentProps) => {
   console.log(props)
   return (
     <div className="flex flex-col items-start border m-3">
@@ -19,4 +19,4 @@ const Commnet = (props: CommentProps) => {
   );
 };
 
-export default Commnet
+export default Comment;

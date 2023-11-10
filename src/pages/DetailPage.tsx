@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Comment from '../components/Commnet'
+import Comment from '../components/Comment'
 import { useSearchParams } from 'react-router-dom'
 import useRpc from '../hooks/useRpc';
 import Loading from '../components/Loading';
